@@ -1,0 +1,33 @@
+* {
+    margin: 10px 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    height: 100px;
+    width: 300px;
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.output {
+    height: 100px;
+    width: 300px;
+    border: 2px solid;
+}
