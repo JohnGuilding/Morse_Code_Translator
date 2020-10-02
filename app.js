@@ -77,7 +77,6 @@ const morseArray = [
 // console.log(Object.entries(morseArray));
 
 
-
 const translation = document.querySelector('.translation');
 
 ////////////////////////////// TRANSLATE FUNCTION //////////////////////////////
@@ -91,15 +90,44 @@ const getValue = () => {
     const inputArray = [...output];
 
     // IF INPUT CHARACTERS MATCH LETTERS ARRAY DO SOMETHING... //
-    morseArray.forEach((letter) => {
-        const lettersArray = Object.keys(letter);
-        inputArray.forEach((inputLetter) => {
-            if (inputLetter == lettersArray) {
-                console.log(lettersArray);
-            }
+    morseArray.forEach((objectIteration) => {
+        // const lettersArray = Object.keys(letter);
+
+        Object.entries(objectIteration).forEach(([key, value]) => {
+            // console.log(`${key}: ${value}`);
+            // return key;
+
+            inputArray.forEach((inputLetter) => {
+                if (inputLetter == key) {
+                
+                    // String(value);
+                    console.log(typeof value);
+                    translation.innerHTML += '  ' + value;
+                    
+                }
+            });
+
         });
+
+
+        
     });
 }
+
+    // morseArray.forEach((object) => {
+    //     let newArray = Object.entries(keys);
+    //     inputArray.forEach((inputLetter) => {
+    //         if (inputLetter == newArray) {
+    //             console.log('yo');
+                
+    //         }
+    //     });
+    // });
+
+
+
+
+// console.log(morseArray.keys);
 
 
 // Object.keys
