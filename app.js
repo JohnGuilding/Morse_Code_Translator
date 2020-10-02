@@ -12,46 +12,96 @@
 // 7. display the result
 // 8. refresh button with event listener
 
+// const morseArray = [
+//     {letter: 'a', morse: '.-'},
+//     {letter: 'b', morse: '-...'},
+//     {letter: 'c', morse: '-.-.'},
+//     {letter: 'd', morse: '-..'},
+//     {letter: 'e', morse: '.'},
+//     {letter: 'f', morse: '..-.'},
+//     {letter: 'g', morse: '--.'},
+//     {letter: 'h', morse: '....'},
+//     {letter: 'i', morse: '..'},
+//     {letter: 'j', morse: '.---'},
+//     {letter: 'k', morse: '-.-'},
+//     {letter: 'l', morse: '.-..'},
+//     {letter: 'm', morse: '--'},
+//     {letter: 'n', morse: '-.'},
+//     {letter: 'o', morse: '---'},
+//     {letter: 'p', morse: '.--.'},
+//     {letter: 'q', morse: '--.-'},
+//     {letter: 'r', morse: '.-.'},
+//     {letter: 's', morse: '...'},
+//     {letter: 't', morse: '-'},
+//     {letter: 'u', morse: '..-'},
+//     {letter: 'v', morse: '...-'},
+//     {letter: 'w', morse: '.--'},
+//     {letter: 'x', morse: '-..-'},
+//     {letter: 'y', morse: '-.--'},
+//     {letter: 'z', morse: '--..'},
+//     {letter: ' ', morse: ' '}
+// ];
+
+const morseArray = [
+    {'a' : '.-'},
+    {'b' : '-...'},
+    {'c' : '-.-.'},
+    {'d' : '-..'},
+    {'e' : '.'},
+    {'f' : '..-.'},
+    {'g' : '--.'},
+    {'h' : '....'},
+    {'i' : '..'},
+    {'j' : '.---'},
+    {'k' : '-.-'},
+    {'l' : '.-..'},
+    {'m' : '--'},
+    {'n' : '-.'},
+    {'o' : '---'},
+    {'p' : '.--.'},
+    {'q' : '--.-'},
+    {'r' : '.-.'},
+    {'s' : '...'},
+    {'t' : '-'},
+    {'u' : '..-'},
+    {'v' : '...-'},
+    {'w' : '.--'},
+    {'x' : '-..-'},
+    {'y' : '-.--'},
+    {'z' : '--..'},
+    {' ' : ' '}
+];
+
+// console.log(morseArray);
+
+// console.log(Object.entries(morseArray));
+
+
+
 const translation = document.querySelector('.translation');
 
-// get value 
+////////////////////////////// TRANSLATE FUNCTION //////////////////////////////
+
+// GET USER INPUT FROM FORM //
 const getValue = () => {
-    let form = document.querySelector("form");
+    const form = document.querySelector("form");
     output = form.morseCode.value;
 
-    let lettersArray = [...output];
-    lettersArray.forEach((letter) => {
+    // SETS INPUT TO ARRAY AND SPLITS STRING WITH SPREAD SYNTAX //
+    const inputArray = [...output];
 
+    // IF INPUT CHARACTERS MATCH LETTERS ARRAY DO SOMETHING... //
+    morseArray.forEach((letter) => {
+        const lettersArray = Object.keys(letter);
+        inputArray.forEach((inputLetter) => {
+            if (inputLetter == lettersArray) {
+                console.log(lettersArray);
+            }
+        });
     });
 }
 
 
-const morseArray = [
-    {letter: 'a', morse: '.-'},
-    {letter: 'b', morse: '-...'},
-    {letter: 'c', morse: '-.-.'},
-    {letter: 'd', morse: '-..'},
-    {letter: 'e', morse: '.'},
-    {letter: 'f', morse: '..-.'},
-    {letter: 'g', morse: '--.'},
-    {letter: 'h', morse: '....'},
-    {letter: 'i', morse: '..'},
-    {letter: 'j', morse: '.---'},
-    {letter: 'k', morse: '-.-'},
-    {letter: 'l', morse: '.-..'},
-    {letter: 'm', morse: '--'},
-    {letter: 'n', morse: '-.'},
-    {letter: 'o', morse: '---'},
-    {letter: 'p', morse: '.--.'},
-    {letter: 'q', morse: '--.-'},
-    {letter: 'r', morse: '.-.'},
-    {letter: 's', morse: '...'},
-    {letter: 't', morse: '-'},
-    {letter: 'u', morse: '..-'},
-    {letter: 'v', morse: '...-'},
-    {letter: 'w', morse: '.--'},
-    {letter: 'x', morse: '-..-'},
-    {letter: 'y', morse: '-.--'},
-    {letter: 'z', morse: '--..'},
-    {letter: ' ', morse: ' '}
-];
+// Object.keys
+// Object.values
+
