@@ -1,85 +1,42 @@
-// You’re tasked with creating a website that can translate between english and morse code.
-// As an extension it should be able to translate both ways.
-
-// 1. store alphabet
-// 2. store morse code
-// 3. listener on the btn listening for the click
-// 4. ON CLICK -> run a function -> convert english to morse
-// 5. 'convert english to morse' -> get the letter and find the corresponding morse
-// 6. a) creat 2 arrays -> one with the letters of the alphabet -> 2 with morse
-//    b) array of objects vs array of strings
-//    c) objects with key value pairs
-// 7. display the result
-// 8. refresh button with event listener
-
-// const morseArray = [
-//     {'a' : '.-'},
-//     {'b' : '-...'},
-//     {'c' : '-.-.'},
-//     {'d' : '-..'},
-//     {'e' : '.'},
-//     {'f' : '..-.'},
-//     {'g' : '--.'},
-//     {'h' : '....'},
-//     {'i' : '..'},
-//     {'j' : '.---'},
-//     {'k' : '-.-'},
-//     {'l' : '.-..'},
-//     {'m' : '--'},
-//     {'n' : '-.'},
-//     {'o' : '---'},
-//     {'p' : '.--.'},
-//     {'q' : '--.-'},
-//     {'r' : '.-.'},
-//     {'s' : '...'},
-//     {'t' : '-'},
-//     {'u' : '..-'},
-//     {'v' : '...-'},
-//     {'w' : '.--'},
-//     {'x' : '-..-'},
-//     {'y' : '-.--'},
-//     {'z' : '--..'},
-//     {' ' : ' '}
-// ];
-
-const englishArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-const morseArray = ['.-', '-...', '-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..'];
 
 
-const translation = document.querySelector('.translation');
-
-////////////////////////////// TRANSLATE FUNCTION //////////////////////////////
-
-const form = document.querySelector(".form");
-const submitBtn = document.querySelector(".submitBtn");
-
-// const getValue = () => {
-    
-//     let output = form.morseCode.value;
-//     console.log(output);
-//     return output;
-// }
-//     console.log(output);
+////////////////////////////// LETTERS AND MORSE CODE ARRAYS //////////////////////////////
 
 
+const englishArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ' '];
+
+const morseArray = ['.-', '-...', '-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..', '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.', '-----', ' '];
 
 
-submitBtn.addEventListener('click', () => {
-    const output = form.morseCode.value;
-    // console.log(output);
+////////////////////////////// TRANSLATE ENGLISH FUNCTION //////////////////////////////
 
+
+const englishForm = document.querySelector(".english-form");
+const submitEnglishBtn = document.querySelector(".submit-english-btn");
+const englishTranslation = document.querySelector('.english-translation');
+
+// 0. Add eventListener to submit btn //
+submitEnglishBtn.addEventListener('click', () => {
+    // 1. InnerHTML set to empty //
+    englishTranslation.innerHTML = '';
+
+    // 2. setting variable to form output //
+    const output = englishForm.morseCode.value;
+
+    // 3. Splitting array into individual letters //
     const inputArray = [...output];
-    // console.log(inputArray);
 
+    // 4. Iterating over each input letter //
     inputArray.forEach((inputLetter) => {
 
+        // 5. Iterating over english array and checking if each input letter is equal to a englishArray letter //
         englishArray.forEach((arrayLetter) => {
             if (inputLetter == arrayLetter) {
-                console.log(englishArray.indexOf(arrayLetter));
+
+                // 6. If true, iterate over morseArray and for morse code with same array index as english letter, prepend to innerHTML //
                 morseArray.forEach((arrayMorse) => {
                     if (morseArray.indexOf(arrayMorse) == englishArray.indexOf(arrayLetter)) {
-                        console.log(arrayMorse);
+                        englishTranslation.innerHTML += ' ' + arrayMorse;
                     }
                 });
             }
@@ -87,81 +44,55 @@ submitBtn.addEventListener('click', () => {
     });
 });
 
+// Refresh translation function //
+refreshEnglishTranslation = document.querySelector('.refresh-english-btn');
+
+refreshEnglishTranslation.addEventListener('click', () => {
+    englishTranslation.innerHTML = '';
+});
 
 
-// for(let i = 0; i < morseArray.length; i++) {
-//     if(letter == morseArray[i]) {
-//         console.log('oh yes oh yes');
-//     }
-// }
+////////////////////////////// TRANSLATE MORSE FUNCTION //////////////////////////////
 
 
+const morseForm = document.querySelector(".morse-form");
+const submitMorseBtn = document.querySelector(".submit-morse-btn");
+const morseTranslation = document.querySelector('.morse-translation');
 
+// 0. Add eventListener to submit btn //
+submitMorseBtn.addEventListener('click', () => {
+    // 1. InnerHTML set to empty //
+    morseTranslation.innerHTML = '';
 
+    // 2. setting variable to form output //
+    const output = morseForm.morseCode.value;
 
+    // 3. Splitting array into individual morse code segments //
+    const inputArray = output.split(' ')
 
+    // 4. Iterating over each morse code segment //
+    inputArray.forEach((inputLetter) => {
 
+        // 5. Iterating over morse array and checking if each input is equal to a morseArray element //
+        morseArray.forEach((arraySymbol) => {
+            if (inputLetter == arraySymbol) {
+                console.log(morseArray.indexOf(arraySymbol));
 
+                // 6. If true, iterate over englishArray and for letter with same array index as morse element, prepend to innerHTML //
+                englishArray.forEach((arrayLetter) => {
+                    if (englishArray.indexOf(arrayLetter) == morseArray.indexOf(arraySymbol)) {
+                        console.log(arrayLetter);
+                        morseTranslation.innerHTML += arrayLetter;
+                    }
+                });
+            }
+        });
+    });
+});
 
+// Refresh translation function //
+refreshMorseTranslation = document.querySelector('.refresh-morse-btn');
 
-
-
-
-
-
-
-
-
-// // GET USER INPUT FROM FORM //
-// const getValue = () => {
-//     const form = document.querySelector("form");
-//     output = form.morseCode.value;
-
-//     // SETS INPUT TO ARRAY AND SPLITS STRING WITH SPREAD SYNTAX //
-//     const inputArray = [...output];
-
-//     // IF INPUT CHARACTERS MATCH LETTERS ARRAY DO SOMETHING... //
-//     morseArray.forEach((objectIteration) => {
-//         // const lettersArray = Object.keys(letter);
-
-//         Object.entries(objectIteration).forEach(([key, value]) => {
-//             // console.log(`${key}: ${value}`);
-//             // return key;
-
-//             inputArray.forEach((inputLetter) => {
-//                 if (inputLetter == key) {
-                
-//                     // String(value);
-//                     console.log(typeof value);
-//                     translation.innerHTML += '  ' + value;
-                    
-//                 }
-//             });
-
-//         });
-
-//     });
-// }
-
-
-
-
-    // morseArray.forEach((object) => {
-    //     let newArray = Object.entries(keys);
-    //     inputArray.forEach((inputLetter) => {
-    //         if (inputLetter == newArray) {
-    //             console.log('yo');
-                
-    //         }
-    //     });
-    // });
-
-
-
-
-// console.log(morseArray.keys);
-
-
-// Object.keys
-// Object.values
-
+refreshMorseTranslation.addEventListener('click', () => {
+    morseTranslation.innerHTML = '';
+});

@@ -11,20 +11,43 @@
 
     <main>
 
-        <section class="input">
-            
-            <form class="form" action="" name="form">
-                <label for="morseCode">Enter Morse Code Here</label>
-                <input type="text" id="morseCode" name="morseCode">
-                <input type="button" name="submitBtn" value="submit" class="submitBtn">
-            </form>
+        <!-- English to morse translation -->
+        <div class="translation-container">
+            <section class="input">
+                
+                <form class="english-form" action="" name="form">
+                    <label for="morseCode">Enter English Here</label>
+                    <input type="text" id="morseCode" name="morseCode">
+                    <input type="button" name="submitBtn" value="submit" class="submit-english-btn">
+                </form>
+    
+            </section>
+    
+            <section class="output">
+                <h2>Translation</h2>
+                <p class="english-translation"></p>
+                <button class="refresh-english-btn">Refresh</button>
+            </section>
+        </div>
 
-        </section>
-
-        <section class="output">
-            <h2>Translation</h2>
-            <p class="translation"></p>
-        </section>
+        <!-- Morse to english translation -->
+        <div class="translation-container">
+            <section class="input">
+                
+                <form class="morse-form" action="" name="form">
+                    <label for="morseCode">Enter Morse Code Here</label>
+                    <input type="text" id="morseCode" name="morseCode">
+                    <input type="button" name="submitBtn" value="submit" class="submit-morse-btn">
+                </form>
+    
+            </section>
+    
+            <section class="output">
+                <h2>Translation</h2>
+                <p class="morse-translation"></p>
+                <button class="refresh-morse-btn">Refresh</button>
+            </section>
+        </div>
 
     </main>
 
