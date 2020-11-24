@@ -36,43 +36,78 @@ const translationDataObject = {
 	"8": "---..",
 	"9": "----.",
 	"0": "-----",
-	" ": " "
+	" ": "   ",
 };
+
+// const translationDataObject = {
+// 	".-": "a", 
+// 	"-...": "b",
+// 	"-.-.": "c",
+// 	"-..": "d",
+// 	".": "e", 
+// 	"..-.": "f", 
+// 	"--.": "g", 
+// 	"....": "h", 
+// 	"..": "i", 
+// 	".---": "j", 
+// 	"-.-": "k", 
+// 	".-..": "l", 
+// 	"--": "m", 
+// 	"-.": "n", 
+// 	"---": "o", 
+// 	".--.": "p", 
+// 	"--.-": "q", 
+// 	".-.": "r", 
+// 	"...": "s", 
+// 	"-": "t", 
+// 	"..-": "u", 
+// 	"...-": "v", 
+// 	".--": "w", 
+// 	"-..-": "x", 
+// 	"-.--": "y", 
+// 	"--..": "z", 
+// 	".----": "1", 
+// 	"..---": "2", 
+// 	"...--": "3", 
+// 	"....-": "4", 
+// 	".....": "5", 
+// 	"-....": "6", 
+// 	"--...": "7", 
+// 	"---..": "8", 
+// 	"----.": "9", 
+// 	"-----": "0", 
+// 	"   ": " ",
+// };
+
+
 
 // const message = "hello";
 
-const translate = (input) => {
+const translateToMorse = (input) => {
     const word = input
     .split(' ')
     .map(
         (word) => word
         .split('')
-        .map((character) => translationDataObject[character]))
-    // ).join('')
-    // ).join(' ');
+        .map((character) => translationDataObject[character]
+    ).join(' ')
+    ).join('   ');
+    console.log('to Morse');
     console.log(word);
 }
-// const translate = (input) => {
+
+// const translateToEnglish = (input) => {
 //     const word = input
 //     .split(' ')
 //     .map(
 //         (character) => character
-//         .split('')
-//         .map((b) => translationDataObject[b]
+//         .split(' ')
+//         .map((b) => translationDataObjectm[b]
 //     ).join('')
 //     ).join(' ');
+//     console.log('to English');
 //     console.log(word);
 // }
 
-// return morseCode
-// .split('   ')
-// .map(
-//   a => a
-//     .split(' ')
-//     .map(
-//       b => ref[b]
-//     ).join('')
-// ).join(' ');
-// }
-
-translate('hello mate');
+translateToMorse('hello mate')
+// translateToEnglish('.... . .-.. .-.. --- -- .- - .');
