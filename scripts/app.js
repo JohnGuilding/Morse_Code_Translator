@@ -1,9 +1,6 @@
-import { translateEnglish, translateMorse } from "./translate";
+import { translateEnglish, translateMorse } from "./translate.js";
 
 ////////////////////////////// TRANSLATE ENGLISH FUNCTION //////////////////////////////
-
-// const { translateMorse } = require("./translate");
-
 const submitEnglishBtn = document.querySelector(".submit-english-btn");
 submitEnglishBtn.addEventListener("click", () => {
 	translateEnglish();
@@ -15,9 +12,8 @@ refreshEnglishTranslation.addEventListener("click", () => {
 	englishTranslation.innerHTML = "";
 });
 
+
 ////////////////////////////// TRANSLATE MORSE FUNCTION //////////////////////////////
-
-
 const submitMorseBtn = document.querySelector(".submit-morse-btn");
 submitMorseBtn.addEventListener("click", () => {
 	translateMorse();
