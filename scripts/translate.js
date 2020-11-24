@@ -25,6 +25,10 @@ const translateEnglish = () => {
 	});
 }
 
+// translation.addEventListener('click', (e) => {
+//     something.innerHTML = translateFunction(e.target.value)
+// })
+
 const morseTranslation = document.querySelector(".morse-translation");
 const morseForm = document.querySelector(".morse-form");
 
