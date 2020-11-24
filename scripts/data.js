@@ -80,7 +80,7 @@ const morseArray = [
 	" ",
 ];
 
-const translationArray = {
+const translationDataObject = {
 	"a": ".-",
 	"b": "-...",
 	"c": "-.-.",
@@ -120,5 +120,5 @@ const translationArray = {
 	" ": " "
 };
 
-export { englishArray, morseArray, translationArray };
+export { englishArray, morseArray, translationDataObject };
 
