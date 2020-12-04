@@ -6,9 +6,9 @@ const translateToMorse = (input) => {
     .map(
         (word) => word
         .split('')
-        .map((character) => dictionary[character]
-    ).join(' ')
-    ).join('   ');
+        .map((character) => dictionary[character])
+    .join(' '))
+    .join('   ');
     return word;
 }
 
