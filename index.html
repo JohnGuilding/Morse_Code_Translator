@@ -8,14 +8,13 @@
 </head>
 <body>
     
-
     <main>
 
         <!-- English to morse translation -->
         <div class="translation-container">
             <section class="input">
                 
-                <form class="english-form" action="" name="Eform">
+                <form class="english-form" name="Eform">
                     <label for="morseCode">Enter English Here</label>
                     <input type="text" id="morseCode" name="morseCode">
                     <input type="button" name="submitBtn" value="submit" class="submit-english-btn">
@@ -34,9 +33,9 @@
         <div class="translation-container">
             <section class="input">
                 
-                <form class="morse-form" onsubmit="submitMorseForm()" name="form">
-                    <label for="morseCode">Enter Morse Code Here</label>
-                    <input type="text" id="morseCode" name="morseCode">
+                <form class="morse-form" name="form">
+                    <label for="english">Enter Morse Code Here</label>
+                    <input type="text" id="english" name="english">
                     <input type="button" name="submitBtn" value="submit" class="submit-morse-btn">
                 </form>
     

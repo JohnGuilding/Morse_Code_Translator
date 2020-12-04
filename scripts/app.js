@@ -1,6 +1,5 @@
 import { translateToMorse, translateToEnglish } from "./translate.js";
 
-
 ////////////////////////////// TRANSLATE ENGLISH FUNCTION //////////////////////////////
 const englishForm = document.querySelector(".english-form");
 const englishTranslation = document.querySelector(".english-translation");
@@ -9,7 +8,10 @@ const submitEnglishBtn = document.querySelector(".submit-english-btn");
 submitEnglishBtn.addEventListener("click", () => {
 	englishTranslation.innerHTML = "";
 	const input = englishForm.morseCode.value;
-	englishTranslation.innerHTML = translateToMorse(input);
+	englishForm.morseCode.value = "";
+	console.log(translateToMorse(input));
+	const formattedString = translateToMorse(input).replace('   ', '&nbsp;&nbsp;&nbsp;')
+	englishTranslation.innerHTML = formattedString;
 });
 
 const refreshEnglishTranslation = document.querySelector(".refresh-english-btn");
@@ -24,7 +26,8 @@ const morseForm = document.querySelector(".morse-form");
 const submitMorseBtn = document.querySelector(".submit-morse-btn");
 submitMorseBtn.addEventListener("click", () => {
 	morseTranslation.innerHTML = "";
-	const input = morseForm.morseCode.value;
+	const input = morseForm.english.value;
+	morseForm.english.value = "";
 	morseTranslation.innerHTML = translateToEnglish(input);
 });
 
