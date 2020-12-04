@@ -8,8 +8,6 @@
 header {
     width: 100%;
     text-align: center;
-    border: 3px solid red;
-
 }
 
 main {
@@ -18,47 +16,4 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.translation-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 3px solid red;
-}
-
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.input {
-    height: 100px;
-    width: 290px;
-    padding: 10px;
-    border: 2px solid;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0.7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form {
-    margin: 0 auto;
-}
-
-.output {
-    height: 400px;
-    width: 500px;
-    border: 2px solid;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0.7;
 }
