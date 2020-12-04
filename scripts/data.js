@@ -120,5 +120,7 @@ const translationDataObject = {
 	" ": " "
 };
 
+
+
 export { englishArray, morseArray, translationDataObject };
 

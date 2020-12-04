@@ -1,4 +1,4 @@
-import { translationDataObject } from "./data.js";
+// import { translationDataObject } from "./data.js";
 // const translationDataObject = {
 // 	"a": ".-",
 // 	"b": "-...",
@@ -39,33 +39,7 @@ import { translationDataObject } from "./data.js";
 // 	" ": "   ",
 // };
 
-const translateToMorse = (input) => {
-    const word = input
-    .split(' ')
-    .map(
-        (word) => word
-        .split('')
-        .map((character) => translationDataObject[character]
-    ).join(' ')
-    ).join('   ');
-    console.log('to Morse');
-    console.log(word);
-}
 
-const translateToEnglish = (input) => {
-    const word = input
-    .split('  ')
-    .map(
-        (word) => word
-        .split(' ')
-        .map((character) => {
-            return Object.keys(translationDataObject).find(key => translationDataObject[key] === character)
-        }
-    ).join('')
-    ).join(' ');
-    console.log('to English');
-    console.log(word);
-}
 
-translateToMorse('hello mate');
-translateToEnglish('.... . .-.. .-.. ---   -- .- - .');
+// translateToMorse('hello mate');
+// translateToEnglish('.... . .-.. .-.. ---   -- .- - .');
