@@ -12,9 +12,14 @@ const morseOutput = document.querySelector(".morse-output");
 const morseTranslation = document.querySelector(".morse-translation");
 const refreshMorseTranslation = document.querySelector(".refresh-morse-btn");
 
-/// ANIMATION FUNCTIONS ///
-document.addEventListener("click", (e) => {
-    switch (e.target.getAttribute("data-name")) {
+document.addEventListener("click", animate);
+submitEnglishBtn.addEventListener("click", getEnglishTranslation)
+submitMorseBtn.addEventListener("click", getMorseTranslation)
+
+
+/// ANIMATION FUNCTION ///
+const animate = (event) => {
+    switch (event.target.getAttribute("data-name")) {
         case "openEnglish":
             englishForm.classList.add("animate");
             break;
@@ -28,30 +33,27 @@ document.addEventListener("click", (e) => {
             morseOutput.classList.add("animate");
             break;
     }
-});
+}
 
 /// TRANSLATE ENGLISH FUNCTION ///
-submitEnglishBtn.addEventListener("click", () => {
+const getEnglishTranslation = () => {
     const input = englishForm.morseCode.value;
     englishForm.morseCode.value = "";
     const formattedString = translateToMorse(input).split('   ').join('&nbsp;&nbsp;&nbsp;');
 	englishTranslation.innerHTML = formattedString;
-	
-});
+}
 
 refreshEnglishTranslation.addEventListener("click", () => {
     englishTranslation.innerHTML = "";
 });
 
 /// TRANSLATE MORSE FUNCTION ///
-submitMorseBtn.addEventListener("click", () => {
+const getMorseTranslation = () => {
     const input = morseForm.english.value;
     morseForm.english.value = "";
     morseTranslation.innerHTML = translateToEnglish(input);
-});
+}
 
 refreshMorseTranslation.addEventListener("click", () => {
     morseTranslation.innerHTML = "";
 });
-
-	

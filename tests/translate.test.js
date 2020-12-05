@@ -1,6 +1,6 @@
 const { expect } = require("@jest/globals");
 
-import { translateToMorse, translateToEnglish } from "./translate";
+import { translateToMorse, translateToEnglish } from "../scripts/translate";
 
 // Valid inputs
 it ('should be 1', () => {
@@ -31,7 +31,3 @@ it('should translate to hello world', () => {
     const translation = translateToEnglish('.... . .-.. .-.. ---   .-- --- .-. .-.. -..')
     expect(translation).toBe('hello world')
 });
-
-// Invalid inputs
-
-// Null/no inputs

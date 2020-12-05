@@ -35,7 +35,7 @@ const dictionary = {
 	"8": "---..",
 	"9": "----.",
 	"0": "-----",
-	" ": "&nbsp;&nbsp;&nbsp;"
+	" ": "   "
 };
 
 export { dictionary };
