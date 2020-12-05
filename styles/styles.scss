@@ -7,13 +7,14 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: $dark-text;
+    outline: none;
 }
 
 header {
     width: 100%;
-    height: 10vh;
+    height: 80px;
     text-align: center;
-    // border: 1px solid red;
+    padding: $base-padding;
 
     h1 {
         color: $dark-text;
@@ -47,9 +48,7 @@ main {
 
 .english-form {
     @extend %base-form;
-    transform: translateY(-40px);
-    opacity: 0;
-    transition: 1s ease-in-out;
+    @extend %animate;
 
     .submit-english-btn {
         @extend %base-btn;
@@ -63,9 +62,7 @@ main {
 
 .english-output {
     @extend %output;
-    transform: translateY(-40px);
-    opacity: 0;
-    transition: 1s ease-in-out;
+    @extend %animate;
 
     button {
         @extend %base-btn;
@@ -103,9 +100,7 @@ main {
 
 .morse-form {
     @extend %base-form;
-    transform: translateY(-40px);
-    opacity: 0;
-    transition: 1s ease-in-out;
+    @extend %animate;
 
     .submit-morse-btn {
         @extend %base-btn;
@@ -119,9 +114,7 @@ main {
 
 .morse-output {
     @extend %output;
-    transform: translateY(-40px);
-    opacity: 0;
-    transition: 1s ease-in-out;
+    @extend %animate;
 
     button {
         @extend %base-btn;
