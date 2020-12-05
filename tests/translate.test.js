@@ -1,5 +1,3 @@
-const { expect } = require("@jest/globals");
-
 import { translateToMorse, translateToEnglish } from "../scripts/translate";
 
 // Valid inputs
@@ -30,4 +28,9 @@ it('should translate to a', () => {
 it('should translate to hello world', () => {
     const translation = translateToEnglish('.... . .-.. .-.. ---   .-- --- .-. .-.. -..')
     expect(translation).toBe('hello world')
+});
+
+it('should translate to how much wood would a woodchuck chuck if a woodchuck could chuck wood', () => {
+    const translation = translateToEnglish('.... --- .--   -- ..- -.-. ....   .-- --- --- -..   .-- --- ..- .-.. -..   .-   .-- --- --- -.. -.-. .... ..- -.-. -.-   -.-. .... ..- -.-. -.-   .. ..-.   .-   .-- --- --- -.. -.-. .... ..- -.-. -.-   -.-. --- ..- .-.. -..   -.-. .... ..- -.-. -.-   .-- --- --- -..')
+    expect(translation).toBe('how much wood would a woodchuck chuck if a woodchuck could chuck wood')
 });

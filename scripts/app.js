@@ -12,11 +12,6 @@ const morseOutput = document.querySelector(".morse-output");
 const morseTranslation = document.querySelector(".morse-translation");
 const refreshMorseTranslation = document.querySelector(".refresh-morse-btn");
 
-document.addEventListener("click", animate);
-submitEnglishBtn.addEventListener("click", getEnglishTranslation)
-submitMorseBtn.addEventListener("click", getMorseTranslation)
-
-
 /// ANIMATION FUNCTION ///
 const animate = (event) => {
     switch (event.target.getAttribute("data-name")) {
@@ -57,3 +52,8 @@ const getMorseTranslation = () => {
 refreshMorseTranslation.addEventListener("click", () => {
     morseTranslation.innerHTML = "";
 });
+
+
+document.addEventListener("click", animate);
+submitEnglishBtn.addEventListener("click", getEnglishTranslation)
+submitMorseBtn.addEventListener("click", getMorseTranslation)
