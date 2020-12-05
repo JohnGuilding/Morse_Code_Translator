@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./_variables.scss";
 
 * {
     margin: 0;
@@ -46,6 +46,12 @@ main {
 }
 
 .english-form {
+    // @extend %base-form;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
 
     .submit-english-btn {
         @extend %base-btn;
@@ -95,6 +101,7 @@ main {
 }
 
 .morse-form {
+    // @extend %base-form;
 
     .submit-morse-btn {
         @extend %base-btn;
