@@ -6,13 +6,14 @@
   align-items: center;
 }
 
-.morse-output button, .morse-form .submit-morse-btn, .translate-morse-container .translate-morse, .english-output button, .english-form .submit-english-btn, .translate-english-container .translate-english {
+.morse-output button, .morse-form .submit-morse-btn, .translate-morse-container .show-translate, .english-output button, .english-form .submit-english-btn, .translate-english-container .show-translate {
   height: 40px;
   width: 140px;
   border-radius: 15px;
   border: none;
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .morse-form, .english-form {
@@ -61,7 +62,7 @@ main {
   display: flex;
 }
 
-.translate-english-container .translate-english {
+.translate-english-container .show-translate {
   background: linear-gradient(to right, #c235ec, #f02db5);
   box-shadow: 2px 2px 10px violet;
 }
@@ -70,10 +71,14 @@ main {
   padding: 15px;
 }
 .translate-english-container .input {
-  border: 1px solid violet;
   width: 100%;
 }
 
+.english-form {
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
 .english-form .submit-english-btn {
   height: 30px;
   width: 100px;
@@ -83,7 +88,9 @@ main {
 }
 
 .english-output {
-  border: 1px solid violet;
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 .english-output button {
   height: 30px;
@@ -96,7 +103,7 @@ main {
   color: white;
 }
 
-.translate-morse-container .translate-morse {
+.translate-morse-container .show-translate {
   background: linear-gradient(to right, #0072ff, #00c6ff);
   box-shadow: 2px 2px 10px lightblue;
 }
@@ -105,10 +112,14 @@ main {
   padding: 15px;
 }
 .translate-morse-container .input {
-  border: 1px solid lightblue;
   width: 100%;
 }
 
+.morse-form {
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
 .morse-form .submit-morse-btn {
   height: 30px;
   width: 100px;
@@ -118,7 +129,9 @@ main {
 }
 
 .morse-output {
-  border: 1px solid lightblue;
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 .morse-output button {
   height: 30px;
@@ -129,4 +142,9 @@ main {
 }
 .morse-output button i {
   color: white;
+}
+
+.animate {
+  transform: translateY(0px);
+  opacity: 1;
 }

@@ -16,13 +16,13 @@
     <main>
         <!-- English to morse translation -->
         <div class="translate-english-container">
-            <button class="translate-english">Translate English</button>
+            <button class="show-translate" data-name="openEnglish">Translate English</button>
             <section class="input">
                 
-                <form class="english-form" name="Eform">
+                <form class="english-form" onsubmit="return false" name="form">
                     <!-- <label for="morseCode">Enter English Here</label> -->
                     <input type="text" id="morseCode" name="morseCode">
-                    <input type="button" name="submitBtn" value="submit" class="submit-english-btn">
+                    <input type="button" name="submitBtn" value="submit" class="submit-english-btn" data-name="translateEnglish">
                 </form>
 
             </section>
@@ -38,13 +38,13 @@
 
         <!-- Morse to english translation -->
         <div class="translate-morse-container">
-            <button class="translate-morse">Translate Morse</button>
+            <button class="show-translate" data-name="openMorse">Translate Morse</button>
             <section class="input">
                 
-                <form class="morse-form" name="form">
+                <form class="morse-form" onsubmit="return false" name="form">
                     <!-- <label for="english">Enter Morse Code Here</label> -->
                     <input type="text" id="english" name="english">
-                    <input type="button" name="submitBtn" value="submit" class="submit-morse-btn">
+                    <input type="button" name="submitBtn" value="submit" class="submit-morse-btn" data-name="translateMorse">
                 </form>
     
             </section>
