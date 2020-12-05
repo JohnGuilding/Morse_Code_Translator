@@ -7,13 +7,9 @@ $english-border: violet;
 $morse-gradient: linear-gradient(to right, #0072ff, #00c6ff);
 $morse-border: lightblue;
 
-%base-margin {
-    margin: 30px 0;
-}
+$base-margin: 30px 0;
+$base-padding: 15px;
 
-%base-padding {
-    padding: 15px;
-}
 
 %translation-container {
     width: 50%;
@@ -33,6 +29,26 @@ $morse-border: lightblue;
     font-weight: 600;
 }
 
-// %base-form {
+%base-form {
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
 
-// }
+    input {
+        height: 30px;
+        width: 150px;
+        border: 1px solid $dark-text;
+        border-radius: 5px;
+    }
+}
+
+%output {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
