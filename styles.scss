@@ -62,11 +62,15 @@ main {
 
     button {
         @extend %base-btn;
-        height: 45px;
-        width: 45px;
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
         background: $english-gradient;
         box-shadow: 2px 2px 10px $english-border;
+
+        i {
+            color: $light-text;
+        }
     }
 }
 
@@ -107,11 +111,15 @@ main {
 
     button {
         @extend %base-btn;
-        height: 45px;
-        width: 45px;
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
         background: $morse-gradient;
         box-shadow: 2px 2px 10px $morse-border;
+
+        i {
+            color: $light-text;
+        }
     }
 }
 

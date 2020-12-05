@@ -66,11 +66,14 @@ main {
   border: 1px solid violet;
 }
 .english-output button {
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   background: linear-gradient(to right, #c235ec, #f02db5);
   box-shadow: 2px 2px 10px violet;
+}
+.english-output button i {
+  color: white;
 }
 
 .translate-morse-container .translate-morse {
@@ -93,9 +96,12 @@ main {
   border: 1px solid lightblue;
 }
 .morse-output button {
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   background: linear-gradient(to right, #0072ff, #00c6ff);
   box-shadow: 2px 2px 10px lightblue;
+}
+.morse-output button i {
+  color: white;
 }
